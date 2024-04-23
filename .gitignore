@@ -1,5 +1,6 @@
 # Ignore files containing sensitive information or credentials
 keys/gcp_credentials.json
+orchestration/*.json
 
 # Ignore any generated files or directories
 terraform/.terraform
@@ -16,3 +17,6 @@ ENV/
 env.bak/
 venv.bak/
 
+
+
+data/*.csv
