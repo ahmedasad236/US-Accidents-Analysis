@@ -1,6 +1,9 @@
 # Ignore files containing sensitive information or credentials
-keys/gcp_credentials.json
+orchestration/keys/*.json
 orchestration/*.json
+orchestration/*.csv
+orchestration/data/*.csv
+keys/
 
 # Ignore any generated files or directories
 terraform/.terraform
