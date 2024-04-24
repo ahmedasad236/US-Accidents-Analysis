@@ -1,10 +1,11 @@
 # Ignore files containing sensitive information or credentials
-orchestration/keys/*.json
-orchestration/*.json
-orchestration/*.csv
-orchestration/data/*.csv
+data/*.csv
 keys/
 
+# Ignore files in mage folder
+mage/mage_data*
+mage/*.json
+mage/*.csv
 # Ignore any generated files or directories
 terraform/.terraform
 terraform/*.hcl
@@ -22,4 +23,3 @@ venv.bak/
 
 
 
-data/*.csv
