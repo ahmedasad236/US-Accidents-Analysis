@@ -6,6 +6,9 @@ keys/
 mage/mage_data*
 mage/*.json
 mage/*.csv
+mage/.env
+mage/*.parquet
+
 # Ignore any generated files or directories
 terraform/.terraform
 terraform/*.hcl
