@@ -2,7 +2,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - cleaning_the_data
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -14,6 +15,39 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: load_data_locally
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporting_partitioned_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: cleaning the data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_data_locally
+  uuid: cleaning_the_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporting_partitioned_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - cleaning_the_data
+  uuid: exporting_partitioned_data
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
