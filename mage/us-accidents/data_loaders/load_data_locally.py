@@ -18,8 +18,56 @@ def load_data_from_file(*args, **kwargs):
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
     filepath = '/home/src/US_Accidents_March23.csv'
-    df = pd.read_csv(filepath)
-    print(df.head(2))
+    us_acc_dt = {
+        'ID': str,
+        'Source':str,
+        'Severity':str,
+        'Start_Lat': float,
+        'Start_Lng': float,
+        'Start_Time':str,
+        'End_Time': str,
+        'Weather_Timestamp': str,
+        'Distance(mi)': float,
+        'Description': str,
+        'Street': str,
+        'City': str,
+        'County': str,
+        'State': str,
+        'Zipcode': str,
+        'Country': str,
+        'Airport_Code': str,
+        'Temperature(F)': float,
+        'Wind_Chill(F)': float,
+        'Humidity(%)': float,
+        'Pressure(in)': float,
+        'Visibility(mi)': float,
+        'Wind_Direction': str,
+        'Wind_Speed(mph)': float,
+        'Precipitation(in)': float,
+        'Weather_Condition': str,
+        'Amenity': bool,
+        'Bump': bool,
+        'Crossing': bool,
+        'Give_Way': bool,
+        'Junction': bool,
+        'No_Exit': bool,
+        'Railway': bool,
+        'Roundabout': bool,
+        'Station': bool,
+        'Stop': bool,
+        'Traffic_Calming': bool,
+        'Traffic_Signal': bool,
+        'Turning_Loop': bool,
+        'Sunrise_Sunset': str, 
+        'Civil_Twilight': str,
+        'Nautical_Twilight': str,
+        'Astronomical_Twilight': str
+    }
+
+
+
+    df = pd.read_csv(filepath, sep=",", dtype=us_acc_dt)
+    print(df.head(1))
     return df
 
 

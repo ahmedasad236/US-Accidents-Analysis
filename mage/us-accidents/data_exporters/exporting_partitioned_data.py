@@ -18,11 +18,8 @@ def export_data(data, *args, **kwargs):
     
     transformed_df = data  
 
-    # Convert the "Start_Time" column to datetime
-    transformed_df['Start_Time'] = pd.to_datetime(transformed_df['Start_Time'])
-
     # Create a new column "Start_Year" containing the year extracted from "Start_Time"
-    transformed_df['Start_Year'] = transformed_df['Start_Time'].dt.year
+    transformed_df['Start_Year'] = transformed_df['Start_Time'].str[:4]
 
     table = pa.Table.from_pandas(transformed_df)
 
