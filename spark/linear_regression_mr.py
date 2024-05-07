@@ -14,7 +14,7 @@ def linear_regression(data, learning_rate, num_iterations):
   Returns:
       A tuple containing the final weights and the cost history
   """
-  num_features = data.select(size(data["features"])).first()[0]
+  num_features = len(data.first()[0])
   # Initialize weights with zeros
   weights = [random.random() for _ in range(num_features)]
 
