@@ -20,6 +20,7 @@ def linear_regression(data, learning_rate, num_iterations):
 
   cost_history = []
   for i in range(num_iterations):
+    
     # Map step: Calculate gradient for each data point
     gradient_df = data.map(lambda point: calculate_gradient(point, weights, num_features))
 
@@ -29,6 +30,7 @@ def linear_regression(data, learning_rate, num_iterations):
     # Update weights using learning rate
     # w = w - lr * gradient
     weights = np.subtract(weights, np.multiply(learning_rate/data.count(), total_gradient))
+    
     # Calculate cost for this iteration
     cost = calculate_cost(data, weights)
 
