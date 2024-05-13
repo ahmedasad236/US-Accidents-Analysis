@@ -43,3 +43,5 @@ models:
     # Applies to all files under models/core/
     core:
       +materialized: table
+vars:
+    "dbt_date:time_zone": "America/Seattle"
