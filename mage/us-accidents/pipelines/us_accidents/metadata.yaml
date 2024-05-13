@@ -20,6 +20,7 @@ blocks:
   configuration: {}
   downstream_blocks:
   - exporting_partitioned_data
+  - export_to_bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -48,6 +49,22 @@ blocks:
   upstream_blocks:
   - cleaning_the_data
   uuid: exporting_partitioned_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_to_BigQuery
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - cleaning_the_data
+  uuid: export_to_bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

@@ -1,6 +1,7 @@
 from mage_ai.settings.repo import get_repo_path
 from mage_ai.io.bigquery import BigQuery
 from mage_ai.io.config import ConfigFileLoader
+import pandas as pd
 from pandas import DataFrame
 from os import path
 
@@ -27,6 +28,16 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
         'Wind_Chill(F)' : 'Wind_Chill',
         'Temperature(F)' : 'Temperature'
     }, inplace=True)
+
+    # Convert 'Time' column to datetime
+    df['Start_Time'] = pd.to_datetime(df['Start_Time'])
+
+    # Create new columns for day and month
+    df['Day_Of_Acc'] = df['Start_Time'].dt.day.astype(str)
+    df['Month_Of_Acc'] = df['Start_Time'].dt.month.astype(str)
+
+    # Convert 'Severity' column to numbers
+    df['Severity'] = df['Severity'].astype(int)
 
     # drop null values
     df.dropna()
