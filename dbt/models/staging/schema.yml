@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: us-accidents-421114
+    schema: us_accidents_analytics
+    
+    tables:
+      - name: accidents
